@@ -1,6 +1,6 @@
 organization in ThisBuild := "com.lightbend"
 
-name := """cluster-bootstrap-demo-kubernetes-api-scala"""
+name := """akka-sample-cluster-kubernetes-scala"""
 
 version := "0.1"
 
@@ -13,12 +13,12 @@ classLoaderLayeringStrategy := ClassLoaderLayeringStrategy.AllLibraryJars
 fork in run := true
 Compile / run / fork := true
 
-mainClass in (Compile, run) := Some("akka.cluster.bootstrap.demo.DemoApp")
+mainClass in (Compile, run) := Some("akka.sample.cluster.kubernetes.DemoApp")
 
 enablePlugins(JavaServerAppPackaging)
 enablePlugins(DockerPlugin)
 
-dockerExposedPorts := Seq(8080, 8080)
+dockerExposedPorts := Seq(8080, 8558, 2552)
 
 libraryDependencies ++= {
   Seq(

@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: appka
-        image: bootstrap-demo-kubernetes-api:1.3.3.7
+        image: akka-sample-cluster-kubernetes-scala:0.1
         imagePullPolicy: Never
         readinessProbe:
           httpGet:
