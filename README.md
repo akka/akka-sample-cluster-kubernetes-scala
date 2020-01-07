@@ -26,7 +26,6 @@ If you use Kubernetes on Docker Desktop, after turning it on, you should first i
 A script does all this is `scripts/test_docker_desktop.sh`. To run it, do:
 
     cd akka-sample-cluster-kubernetes-java
-    chmod +x scripts/test*
     scripts/test_docker_desktop.sh
 
 ### Minikube
