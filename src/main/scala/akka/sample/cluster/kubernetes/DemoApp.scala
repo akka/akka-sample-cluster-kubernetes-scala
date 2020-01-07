@@ -4,12 +4,12 @@ import akka.actor.CoordinatedShutdown
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors
 import akka.cluster.ClusterEvent
-import akka.cluster.typed.{Cluster, Subscribe}
+import akka.cluster.typed.{ Cluster, Subscribe }
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.Directives._
 import akka.management.cluster.bootstrap.ClusterBootstrap
 import akka.management.javadsl.AkkaManagement
-import akka.{actor => classic}
+import akka.{ actor => classic }
 
 object DemoApp extends App {
 
