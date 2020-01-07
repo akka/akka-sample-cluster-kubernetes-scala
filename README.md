@@ -16,14 +16,13 @@ Cluster.
 ## Kubernetes Instructions
     
 ### Docker Desktop for Kubernetes
+For Windows and Mac users, may be handier to use a Kubernetes cluster on [Docker-Desktop](https://www.docker.com/products/docker-desktop).
 If you use Kubernetes on Docker Desktop, after turning it on, you should first issue:
 
-    cd akka-sample-cluster-kubernetes-java/kubernetes
-    
     export KUBECONFIG=~/.kube/config
     kubectl config set-context docker-desktop
     
-A script does all this is `scripts/test_docker_desktop.sh`. To run it, do:
+A script that comprises all steps involved is `scripts/test_docker_desktop.sh`. To run it, do:
 
     cd akka-sample-cluster-kubernetes-java
     scripts/test_docker_desktop.sh
@@ -56,7 +55,7 @@ To check what you have done in Kubernetes so far, you can do:
     kubectl get pods
     kubectl get replicasets
     kubectl cluster-info dump
-    kubectl logs appka-79c98cf745-rhwhz   # pod name
+    kubectl logs appka-79c98cf745-abcdee   # pod name
     
 To wipe everything clean and start over, do:
 
