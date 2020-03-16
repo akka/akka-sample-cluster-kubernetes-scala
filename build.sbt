@@ -6,7 +6,7 @@ version := "0.1"
 
 scalaVersion := "2.13.0"
 lazy val akkaHttpVersion = "10.1.11"
-lazy val akkaVersion    = "2.6.3"
+lazy val akkaVersion    = "2.6.4"
 
 scalacOptions := Seq("-feature", "-unchecked", "-deprecation", "-encoding", "utf8")
 classLoaderLayeringStrategy := ClassLoaderLayeringStrategy.AllLibraryJars
