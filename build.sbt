@@ -31,7 +31,7 @@ libraryDependencies ++= {
     "com.typesafe.akka" %% "akka-discovery" % akkaVersion,
     "ch.qos.logback" % "logback-classic" % "1.2.3",
     "com.lightbend.akka.discovery" %% "akka-discovery-kubernetes-api" % "1.0.5",
-    "com.lightbend.akka.management" %% "akka-management-cluster-bootstrap" % "1.0.5",
+    "com.lightbend.akka.management" %% "akka-management-cluster-bootstrap" % "1.0.6",
 
     "com.typesafe.akka" %% "akka-testkit" % akkaVersion % "test",
     "com.typesafe.akka" %% "akka-actor-testkit-typed" % akkaVersion % Test,
