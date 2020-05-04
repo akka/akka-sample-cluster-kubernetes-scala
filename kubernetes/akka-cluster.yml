@@ -18,15 +18,23 @@ spec:
     spec:
       containers:
       - name: appka
-        image: akka-sample-cluster-kubernetes-scala:0.1
+        image: akka-sample-cluster-kubernetes-scala:latest
+        # remove for real clusters, useful for minikube
         imagePullPolicy: Never
         readinessProbe:
           httpGet:
             path: /ready
-            port: 8558
+            port: management
+          periodSeconds: 10
+          failureThreshold: 3
+          initialDelaySeconds: 10
         livenessProbe:
-          tcpSocket:
-            port: 8558
+          httpGet:
+            path: "/alive"
+            port: management
+          periodSeconds: 10
+          failureThreshold: 5
+          initialDelaySeconds: 20
         ports:
         # akka remoting
         - name: remoting
@@ -39,13 +47,13 @@ spec:
         - name: http
           containerPort: 8080
           protocol: TCP
-#namespace
         env:
         - name: NAMESPACE
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
-#namespace
+        - name: REQUIRED_CONTACT_POINT_NR
+          value: "2"
 
 ---
 kind: Role
