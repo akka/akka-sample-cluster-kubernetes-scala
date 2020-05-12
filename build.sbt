@@ -5,7 +5,7 @@ name := """akka-sample-cluster-kubernetes-scala"""
 version := "0.1"
 
 scalaVersion := "2.13.0"
-lazy val akkaHttpVersion = "10.1.11"
+lazy val akkaHttpVersion = "10.1.12"
 lazy val akkaVersion    = "2.6.5"
 
 scalacOptions := Seq("-feature", "-unchecked", "-deprecation", "-encoding", "utf8")
