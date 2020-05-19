@@ -1,7 +1,5 @@
-logLevel := Level.Warn
+//logLevel := Level.Warn
 
-addSbtPlugin("org.scalariform" % "sbt-scalariform" % "1.8.2")
+addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.7.0")
 
-addSbtPlugin("io.spray" % "sbt-revolver" % "0.9.1")
-
-addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.5.2")
+addSbtPlugin("com.dwijnand" % "sbt-dynver" % "4.0.0")
