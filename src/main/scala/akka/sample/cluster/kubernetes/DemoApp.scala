@@ -34,5 +34,5 @@ object DemoApp extends App {
     AkkaManagement.get(classicSystem).start()
     ClusterBootstrap.get(classicSystem).start()
     Behaviors.empty
-  }, "Appka")
+  }, "appka")
 }
