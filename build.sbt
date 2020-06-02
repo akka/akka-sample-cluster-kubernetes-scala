@@ -1,6 +1,6 @@
 organization in ThisBuild := "com.lightbend"
 
-name := """akka-sample-cluster-kubernetes-scala"""
+name := "akka-sample-cluster-kubernetes"
 
 scalaVersion := "2.13.0"
 lazy val akkaHttpVersion = "10.1.12"
@@ -17,14 +17,13 @@ Compile / run / fork := true
 
 mainClass in (Compile, run) := Some("akka.sample.cluster.kubernetes.DemoApp")
 
-enablePlugins(JavaServerAppPackaging)
-enablePlugins(DockerPlugin)
+enablePlugins(JavaServerAppPackaging, DockerPlugin)
 
-dockerExposedPorts := Seq(8080, 8558, 2552)
+dockerExposedPorts := Seq(8080, 8558, 25520)
 dockerUpdateLatest := true
-
 dockerUsername := sys.props.get("docker.username")
 dockerRepository := sys.props.get("docker.registry")
+dockerBaseImage := "adoptopenjdk/openjdk8"
 
 libraryDependencies ++= {
   Seq(
