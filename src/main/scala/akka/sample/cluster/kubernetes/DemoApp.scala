@@ -23,11 +23,10 @@ object DemoApp extends App {
     Http().bindAndHandle(complete("Hello world"), "0.0.0.0", 8080)
 
     // Create an actor that handles cluster domain events
-    val listener = context.spawn(Behaviors.receiveMessage[ClusterEvent.MemberEvent] {
-      case event: ClusterEvent.MemberEvent =>
-        context.log.info("MemberEvent: {}", event)
-        Behaviors.same
-    }, "listener")
+    val listener = context.spawn(Behaviors.receive[ClusterEvent.MemberEvent]((ctx, event) => {
+      ctx.log.info("MemberEvent: {}", event)
+      Behaviors.same
+    }), "listener")
 
     Cluster(context.system).subscriptions ! Subscribe(listener, classOf[ClusterEvent.MemberEvent])
 
