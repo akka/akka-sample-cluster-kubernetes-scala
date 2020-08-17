@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -exu
-
+eval $(minikube -p minikube docker-env)
 sbt docker:publishLocal
 
 export KUBECONFIG=~/.kube/config
