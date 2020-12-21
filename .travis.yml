@@ -34,3 +34,8 @@ env:
   global:
     - TRAVIS_JDK=adopt@1.8.0-275
     - JABBA_HOME=/home/travis/.jabba
+
+# safelist
+branches:
+  only:
+    - master
