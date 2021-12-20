@@ -4,7 +4,7 @@ name := "akka-sample-cluster-kubernetes"
 
 scalaVersion := "2.13.0"
 lazy val akkaHttpVersion = "10.2.3"
-lazy val akkaVersion = "2.6.12"
+lazy val akkaVersion = "2.6.18"
 lazy val akkaManagementVersion = "1.0.9"
 
 // make version compatible with docker for publishing
