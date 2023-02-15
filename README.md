@@ -34,7 +34,7 @@ If you are using minikube for Kubernetes, please run the included scripts in the
 
 First, package the application and make it available locally as a docker image:
 
-    sbt docker:publishLocal
+    sbt Docker/publishLocal
 
 Then `akka-cluster.yml` should be sufficient to deploy a 2-node Akka Cluster, after
 creating a namespace for it:

@@ -1,21 +1,20 @@
-organization in ThisBuild := "com.lightbend"
+ThisBuild / organization := "com.lightbend"
 
 name := "akka-sample-cluster-kubernetes"
 
-scalaVersion := "2.13.0"
-lazy val akkaHttpVersion = "10.2.3"
-lazy val akkaVersion = "2.6.12"
-lazy val akkaManagementVersion = "1.0.9"
+scalaVersion := "2.13.10"
+lazy val akkaHttpVersion = "10.4.0"
+lazy val akkaVersion = "2.7.0"
+lazy val akkaManagementVersion = "1.2.0"
 
 // make version compatible with docker for publishing
 ThisBuild / dynverSeparator := "-"
 
 scalacOptions := Seq("-feature", "-unchecked", "-deprecation", "-encoding", "utf8")
 classLoaderLayeringStrategy := ClassLoaderLayeringStrategy.AllLibraryJars
-fork in run := true
+run / fork := true
 Compile / run / fork := true
-
-mainClass in (Compile, run) := Some("akka.sample.cluster.kubernetes.DemoApp")
+Compile / run / mainClass := Some("akka.sample.cluster.kubernetes.DemoApp")
 
 enablePlugins(JavaServerAppPackaging, DockerPlugin)
 
