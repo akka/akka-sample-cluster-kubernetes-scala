@@ -24,6 +24,8 @@ dockerUsername := sys.props.get("docker.username")
 dockerRepository := sys.props.get("docker.registry")
 dockerBaseImage := "adoptopenjdk:11-jre-hotspot"
 
+resolvers += "Akka library repository".at("https://repo.akka.io/maven")
+
 libraryDependencies ++= {
   Seq(
     "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
